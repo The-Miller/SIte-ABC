@@ -1,0 +1,62 @@
+<div class="mt-3">
+  <div class="container">
+      <h2>Ajouter un contact</h2>
+      <form #contactForm="ngForm" (submit)="ajouterContact()">
+        <div class="row">
+          <div class="form-group  col-md-4 mb-3">
+            <label for="nom">Nom:</label>
+            <input type="text" class="form-control" id="nom" [(ngModel)]="contact.nom" name="nom" required #nomField="ngModel"  placeholder="Nom">
+            <div *ngIf="nomField.invalid && (nomField.dirty || nomField.touched)">
+              <div style="color: red;" *ngIf="nomField.hasError('required')">Le nom est obligatoire.</div>
+            </div>
+          </div>
+          <div class="form-group  col-md-4 mb-3">
+            <label for="prenom">Prénom:</label>
+            <input type="text" class="form-control" id="prenom" [(ngModel)]="contact.prenom" name="prenom" required #prenomField="ngModel"  placeholder="Prenom">
+            <div *ngIf="prenomField.invalid && (prenomField.dirty || prenomField.touched)">
+              <div style="color: red;" *ngIf="prenomField.hasError('required')">Le prénom est obligatoire.</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group  col-md-8 mb-3">
+          <label for="telephone">Téléphone:</label>
+          <input type="text" class="form-control" id="telephone" [(ngModel)]="contact.telephone" name="telephone" required pattern="[0-9]+" #telephoneField="ngModel" placeholder="Téléphone">
+          <div *ngIf="telephoneField.invalid && (telephoneField.dirty || telephoneField.touched)">
+            <div style="color: red;" *ngIf="telephoneField.hasError('required')">Le téléphone est obligatoire.</div>
+            <div style="color: red;" *ngIf="telephoneField.hasError('pattern')">Le téléphone doit contenir uniquement des chiffres.</div>
+          </div>
+        </div>
+      
+        <div class="form-group  col-md-8">
+          <label for="adresse">Adresse:</label>
+          <input type="text" class="form-control" id="adresse" [(ngModel)]="contact.adresse" name="adresse" #adresseField="ngModel" placeholder="1234 Main St">
+          
+        </div>
+        <div class="form-group  col-md-8">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="contact.email" name="email" #emailField="ngModel"  placeholder="Email">
+          
+        </div>
+        <div class="form-group  col-md-8">
+          <label for="photo">Photo (URL):</label>
+          <input type="text" class="form-control" id="photo" [(ngModel)]="contact.photo" name="photo" #photoField="ngModel">
+          
+        </div>
+
+        <div class="row mt-3">
+              <div  class="form-group col-md-1 ">
+                <button type="reset" class="btn btn-outline-secondary" id="resetbouton">Reset</button>
+              </div>
+            <div  class="form-group col-md-2 ">
+              <button type="submit" class="btn btn-outline-primary btn-custom1" [disabled]="!contactForm.form.valid" [ngClass]="{'disabled': !contactForm.form.valid}">Ajouter le Contact</button>
+            </div>
+        </div>
+        <div class="mt-3"></div>
+      </form>
+    </div> 
+  </div>
+
+
+
+
+

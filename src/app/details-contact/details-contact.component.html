@@ -1,0 +1,36 @@
+<div class="container" *ngIf="contact">
+  <h2>Détails du contact</h2>
+  <div class="contact-details">
+    <div class="photo">
+      <img [src]="contact.photo" alt="Photo" height="150">
+    </div>
+    <div class="details">
+      <div class="form-group">
+        <label><strong><u>Nom:</u></strong></label>
+        <p>{{ contact.nom }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong><u>Prénom:</u></strong></label>
+        <p>{{ contact.prenom }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong><u>Téléphone:</u></strong></label>
+        <p>{{ contact.telephone }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong><u>Adresse:</u></strong></label>
+        <p>{{ contact.adresse }}</p>
+      </div>
+      <div class="form-group">
+        <label><strong><u>Email:</u></strong></label>
+        <p>{{ contact.email }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

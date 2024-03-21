@@ -1,0 +1,19 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; 
+  }
+  
+  .contact-details {
+    display: flex; 
+  }
+  
+  .photo {
+    flex: 0 0 30%;
+    margin-right: 20px;
+  }
+  
+  .details {
+    flex: 1; 
+  }
+  

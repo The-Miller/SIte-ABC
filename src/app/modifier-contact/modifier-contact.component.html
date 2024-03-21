@@ -1,0 +1,50 @@
+
+<div class="container">
+    <h2>Modifier le contact</h2>
+    <form #contactForm="ngForm" (submit)="modifierContact()">
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" id="nom" [(ngModel)]="contact.nom" name="nom" required #nomField="ngModel" placeholder="Veuillez saisir votre nom">
+        <div *ngIf="nomField.invalid && (nomField.dirty || nomField.touched)">
+          <div style="color: red;" *ngIf="nomField.hasError('required')">Le nom est obligatoire.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prénom:</label>
+        <input type="text" class="form-control" id="prenom" [(ngModel)]="contact.prenom" name="prenom" required #prenomField="ngModel" placeholder="Veuillez saisir votre prénom">
+        <div *ngIf="prenomField.invalid && (prenomField.dirty || prenomField.touched)">
+          <div style="color: red;" *ngIf="prenomField.hasError('required')">Le prénom est obligatoire.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="telephone">Téléphone:</label>
+        <input type="text" class="form-control" id="telephone" [(ngModel)]="contact.telephone" name="telephone" 
+               required pattern="[0-9]+" #telephoneField="ngModel" placeholder="Veuillez saisir votre numéro de téléphone">
+        <div *ngIf="telephoneField.invalid && (telephoneField.dirty || telephoneField.touched)">
+          <div style="color: red;" *ngIf="telephoneField.hasError('required')">Le téléphone est obligatoire.</div>
+          <div style="color: red;" *ngIf="telephoneField.hasError('pattern')">Le téléphone doit contenir uniquement des chiffres.</div>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="adresse">Adresse:</label>
+        <input type="text" class="form-control" id="adresse" [(ngModel)]="contact.adresse" name="adresse" required #adresseField="ngModel" placeholder="Veuillez saisir votre adresse">
+  
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="contact.email" name="email" required #emailField="ngModel" placeholder="Veuillez saisir votre adresse-mail">
+  
+      </div>
+      <div class="form-group">
+        <label for="photo">Photo (URL):</label>
+        <input type="text" class="form-control" id="photo" [(ngModel)]="contact.photo" name="photo" placeholder="Veuillez saisir l'url pour votre photo (facultatif)">  
+        
+      </div>
+      <button type="submit" class="btn btn-outline-primary" [disabled]="!contactForm.form.valid">Mettre à jour</button>
+    </form>
+  </div>
+  
+  
+
+

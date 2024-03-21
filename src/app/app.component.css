@@ -1,0 +1,30 @@
+.navbar-nav .nav-link {
+    color: #aaa; 
+    transition: color 0.3s; 
+    cursor: default; 
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #fff; 
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    flex: 1; 
+    background-image: url('https://img.freepik.com/vecteurs-libre/fond-hexagonal-degrade_23-2148939502.jpg?w=900&t=st=1707521526~exp=1707522126~hmac=713fda4be21fa76ee40e3bc2d4551cb144643eac703b432f9e60ef2ceb9a3851');
+    background-size: cover;
+  }
+
+  .footer {
+    flex-shrink: 0; 
+    color: #fff; 
+  }
+  .navbar,
+  .footer {
+    background-image: url('https://cdn.photoroom.com/v1/assets-cached.jpg?path=backgrounds_v3/black/Photoroom_black_background_extremely_fine_texture_only_black_co_b8b99b1d-72d4-4df3-969f-04a6aecc4f82.jpg'); /* Ajouter votre image de fond */
+    background-size: cover;
+  }
